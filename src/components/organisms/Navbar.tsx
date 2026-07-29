@@ -1,9 +1,7 @@
-import { Activity, useState } from "react"
-import { NavLink } from "react-router-dom"
-import { Menu, X } from "lucide-react" // atau pakai icon lain / SVG manual
-import Button from "../components/ui/Button"
-import { Send, ArrowRight, Trash2, Home, User, Contact, Briefcase, BookOpen, Mail, FolderOpenDot, Shield,   } from "lucide-react"
-
+import { Briefcase, Contact, FolderOpenDot, Home, Menu, Shield, User, X } from "lucide-react";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Button from "../atoms/Button";
 
 const navLinks = [
   { name: "Home", path: "/", icon: Home },
@@ -60,7 +58,7 @@ const Navigasi = () => {
 
 
                 <NavLink to="/contact">
-                    <Button variant="primary" positionIcon="left" icon={<Send size={14} />} className="hidden md:flex">
+                    <Button posisi="kiri" variant="primary" ukuran="kecil" positionIcon="left" icon="Send" className="hidden md:flex">
                         Hire Me
                     </Button>
                 </NavLink>

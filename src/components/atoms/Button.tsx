@@ -1,5 +1,5 @@
 import type React from "react"
-type buttonVariant = "primary" | "putih"
+type buttonVariant = "primary" | "putih" | "biruBening"
 type ukuranButton = "kecil" | "sedang"
 type variantHoverButton = "kiri" | "bawah"
 
@@ -9,7 +9,7 @@ interface ButtonProps {
     onClick?: () => void,
     variant: buttonVariant,
     ukuran: ukuranButton,
-    positionIcon: "left" | "right",
+    positionIcon?: "left" | "right",
     posisi : variantHoverButton 
     icon?: string,
     className?: string
@@ -17,11 +17,12 @@ interface ButtonProps {
 
 const variantStyle : Record<buttonVariant, string> = {
     primary : "bg-primary text-on-primary hover:shadow-lg  hover:shadow-primary/30 transition-all duration-300",
-    putih : "bg-surface border border-outline-variant/30 text-on-surface hover:border-primary/30 hover:bg-primary/5"
+    putih : "bg-surface border border-outline-variant/30 text-on-surface hover:border-primary/30 hover:bg-primary/5",
+    biruBening : "bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-on-primary"
 }
 
 const variantButton : Record<ukuranButton, string> = {
-    kecil : "gap-2 text-[13px] px-5 py-2.5 rounded-full hover:shadow-lg",
+    kecil : "gap-2 text-[13px]  group px-5 py-2.5 rounded-full hover:shadow-lg",
     sedang : "font-semibold group  text-[14px] px-5 py-3 md:px-7 md:py-3.5 rounded-2xl shadow-lg  hover:shadow-xl  active:scale-[0.97] gap-2 overflow-hidden"
 
 }

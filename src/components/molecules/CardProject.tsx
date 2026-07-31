@@ -8,6 +8,8 @@ interface CardProjectProps {
     code: string
     liveDemo: string 
 }
+
+
 const CardProject = ({img, judul, deskripsi, stack = [], liveDemo, code} : CardProjectProps) => {
     return (
         <NavLink to={"/detail"} className="h-full flex flex-col">

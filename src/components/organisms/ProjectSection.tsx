@@ -6,6 +6,8 @@ import CardProject from "../molecules/CardProject"
 
 
 const ProjectSection = () => {
+
+     const displayedProjects = projects.slice(0, 3)
     return (
         <section className="pt-12">
             {/* Header Project */}
@@ -27,20 +29,27 @@ const ProjectSection = () => {
                 <Button   icon="arrow_forward" variant="putih" ukuran="kecil"  posisi="kiri">View All</Button>
             </div>
 
-            <div className=" grid grid-cols-1 md:grid-cols-3 gap-gutter">
-                {projects.slice(0,3).map((item) => (
-                    <CardProject 
-                        key={item.id}
-                        judul={item.title} 
-                        deskripsi={item.description}
-                        stack={item.tags} 
-                        img={item.image}
-                        code={item.codeUrl}
-                        liveDemo={item.demoUrl}
-                    />
-                ))}
-                
-            </div>
+            {displayedProjects.length === 0 ? (
+                <div className="">kosong</div>
+            ) : (
+
+                <div className=" grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                    {displayedProjects.map((item) => (
+                        <CardProject 
+                            key={item.id}
+                            judul={item.title} 
+                            deskripsi={item.description}
+                            stack={item.tags} 
+                            img={item.image}
+                            code={item.codeUrl}
+                            liveDemo={item.demoUrl}
+                        />
+                    ))}
+                    
+                </div>
+            )}
+
+            
 
         </section>
     )

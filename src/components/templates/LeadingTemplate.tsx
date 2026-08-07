@@ -1,3 +1,4 @@
+import Footer from "../organisms/Footer"
 import Hero from "../organisms/Hero"
 import Navbar from "../organisms/Navbar"
 import ProjectSection from "../organisms/ProjectSection"
@@ -13,9 +14,9 @@ const LeadingTempalte = () => {
              <StatCardRow/>
 
              <ProjectSection/>
-
-             
             </main>
+
+            <Footer/>
            
         </div>
     )

@@ -7,6 +7,7 @@ interface BadgeProps {
     dot ?: boolean
     icon?: string
     warna : variantWarna
+ 
     
 }
 
@@ -18,7 +19,7 @@ const varianGaya : Record<variantWarna, string> = {
 
 const Badge = ({label, dot=false , warna, icon} : BadgeProps) => {
     return (
-        <div className={`inline-flex   items-center gap-2 w-fit rounded-full px-4 py-2 mb-2  hero-fade-in ${varianGaya[warna]}`}
+        <div className={`inline-flex   items-center gap-2 w-fit rounded-full px-4 py-2 mb-4 mt-2 hero-fade-in ${varianGaya[warna]} `}
             style={{ "--delay": "0.1s" }}>
             {dot &&
                 <span className="relative flex h-2 w-2">

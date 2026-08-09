@@ -1,19 +1,16 @@
 import { experiences } from "../../constant/experiences";
-import Badge from "../atoms/Badge";
+import SectionHedaer from "../molecules/SectionHeader";
 import TimelineCard from "../molecules/TimelineCard";
 
 const ExperienceEvolution = () => (
     <section className="about-fade-in flex flex-col items-center w-full">
         {/* ── Section Header ── */}
-        <header className="text-center mb-16 max-w-2xl w-full">
-            <Badge icon="timeline" warna="biru" label="Timeline" />
-            <h2 className="font-headline-xl text-[clamp(28px,5vw,44px)] leading-[1.15] text-on-surface font-bold tracking-tight mb-4">
-                Experience & <span className="text-primary">Evolution</span>
-            </h2>
-            <p className="font-body-md text-[15px] md:text-body-md text-on-surface-variant max-w-lg mx-auto">
-                A timeline of my professional journey, highlighting key roles, technical challenges, and major achievements in building scalable web solutions.
-            </p>
-        </header>
+        <SectionHedaer
+            icon="timeline"
+            deskripsi=" A timeline of my professional journey, highlighting key roles, technical challenges, and major achievements in building scalable web solutions."
+        >
+            Experience & <span className="text-primary">Evolution</span>
+        </SectionHedaer>
 
         {experiences.length === 0 ? (
             <div className=""></div>

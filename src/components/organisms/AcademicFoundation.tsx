@@ -1,4 +1,5 @@
-import Badge from "../atoms/Badge";
+
+import SectionHedaer from "../molecules/SectionHeader";
 
 interface Education {
   id: number;
@@ -37,16 +38,14 @@ const educations: Education[] = [
 const AcademicFoundation = () => (
   <section className="about-fade-in flex flex-col items-center w-full">
     {/* ── Section Header ── */}
-    <header className="text-center mb-16 max-w-2xl w-full">
-      <Badge icon="school" warna="biru" label="Education" />
-      <h2 className="font-headline-xl text-[clamp(28px,5vw,44px)] leading-[1.15] text-on-surface font-bold tracking-tight mb-4">
-        Academic <span className="text-primary">Foundation</span>
-      </h2>
-      <p className="font-body-md text-[15px] md:text-body-md text-on-surface-variant max-w-lg mx-auto">
-        Fondasi akademik yang membentuk pola pikir analitis dan kemampuan teknis
-        saya sebagai seorang developer.
-      </p>
-    </header>
+    
+
+    <SectionHedaer 
+      icon="school" 
+      deskripsi="Fondasi akademik yang membentuk pola pikir analitis dan kemampuan teknis saya sebagai seorang developer.">
+      Academic <span className="text-primary">Foundation</span>
+
+    </SectionHedaer>
 
     {/* ── Education Cards ── */}
     <div className="w-full max-w-4xl flex flex-col gap-8">

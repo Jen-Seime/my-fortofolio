@@ -3,6 +3,7 @@
 import { sosialLinks } from "../../constant/SosialLinks";
 import Badge from "../atoms/Badge"
 import Icon from "../atoms/Icon";
+import SectionHedaer from "../molecules/SectionHeader";
 
 
 const AboutSection = () => {
@@ -20,6 +21,8 @@ const AboutSection = () => {
                 Get to Know <span className="text-primary">Me</span>
             </h1>
         </section>
+
+       
 
         <section className="">
             <div className="relative bg-surface/80 border border-outline-variant/20 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">

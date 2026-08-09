@@ -1,4 +1,5 @@
 import Badge from "../atoms/Badge";
+import SectionHedaer from "../molecules/SectionHeader";
 
 interface TrajectoryGoal {
   id: number;
@@ -77,16 +78,12 @@ const statusConfig: Record<
 const FutureTrajectory = () => (
   <section className="about-fade-in flex flex-col items-center w-full">
     {/* ── Section Header ── */}
-    <header className="text-center mb-16 max-w-2xl w-full">
-      <Badge icon="rocket_launch" warna="biru" label="Future" />
-      <h2 className="font-headline-xl text-[clamp(28px,5vw,44px)] leading-[1.15] text-on-surface font-bold tracking-tight mb-4">
-        Future <span className="text-primary">Trajectory</span>
-      </h2>
-      <p className="font-body-md text-[15px] md:text-body-md text-on-surface-variant max-w-lg mx-auto">
-        Peta jalan karier saya ke depan — tujuan yang ingin dicapai, skill yang
-        ingin dikuasai, dan dampak yang ingin diberikan.
-      </p>
-    </header>
+    <SectionHedaer
+      icon="rocket_launch"
+      deskripsi="Peta jalan karier saya ke depan — tujuan yang ingin dicapai, skill yang ingin dikuasai, dan dampak yang ingin diberikan."
+    >
+      Future <span className="text-primary">Trajectory</span>
+    </SectionHedaer>
 
     {/* ── Trajectory Cards Grid ── */}
     <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -2,6 +2,7 @@ import type { RouteObject } from "react-router-dom"
 
 import Home from "../pages/Home"
 import About from "../pages/About"
+import Skill from "../pages/Skill"
 
 
 const routes: RouteObject[] = [
@@ -12,6 +13,10 @@ const routes: RouteObject[] = [
     {
         path: "/about",
         element: <About/>
+    },
+    {
+        path: "/skill",
+        element: <Skill/>
     }
 ]
 

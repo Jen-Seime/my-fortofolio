@@ -21,6 +21,8 @@ const AboutSection = () => {
             </h1>
         </section>
 
+       
+
         <section className="">
             <div className="relative bg-surface/80 border border-outline-variant/20 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
                 <div className="h-1 bg-gradient-to-r from-primary via-primary-container to-primary/40"></div>

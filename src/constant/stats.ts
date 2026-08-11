@@ -1,7 +1,6 @@
-interface Stat {
+export interface Stat {
   label: string;
   value: string;
- 
 }
 
 export const stats : Stat[] = [

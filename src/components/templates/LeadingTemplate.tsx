@@ -1,3 +1,4 @@
+import { stats } from "../../constant/stats"
 import Footer from "../organisms/Footer"
 import Hero from "../organisms/Hero"
 import Navbar from "../organisms/Navbar"
@@ -11,9 +12,10 @@ const LeadingTempalte = () => {
             <main className="pt-13 pb-section-gap  flex-grow max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
              <Hero/>
 
-             <StatCardRow/>
+             <StatCardRow items={stats}/>
 
              <ProjectSection/>
+             
             </main>
 
             <Footer/>

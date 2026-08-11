@@ -6,6 +6,7 @@ import Button from "../atoms/Button";
 const navLinks = [
   { name: "Home", path: "/", icon: Home },
   { name: "About", path: "/about", icon: User },
+  { name: "Skill", path: "/skill", icon: Briefcase },
   { name: "Projects", path: "/projects", icon: Contact },
   { name: "Contact", path: "/contact", icon: Contact },
 ]

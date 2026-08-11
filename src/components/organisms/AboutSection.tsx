@@ -3,7 +3,6 @@
 import { sosialLinks } from "../../constant/SosialLinks";
 import Badge from "../atoms/Badge"
 import Icon from "../atoms/Icon";
-import SectionHedaer from "../molecules/SectionHeader";
 
 
 const AboutSection = () => {

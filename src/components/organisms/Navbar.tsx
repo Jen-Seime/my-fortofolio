@@ -7,19 +7,19 @@ const navLinks = [
   { name: "Home", path: "/", icon: Home },
   { name: "About", path: "/about", icon: User },
   { name: "Skill", path: "/skill", icon: Briefcase },
-  { name: "Projects", path: "/projects", icon: Contact },
+  { name: "Projects", path: "/project", icon: Contact },
   { name: "Contact", path: "/contact", icon: Contact },
 ]
 
 const mobileLinks = [
   { label: "Home", path: "/", icon: Home, desc: "Halaman utama" },
   { label: "About", path: "/about", icon: User, desc: "Tentang saya" },
-  { label: "Skill", path: "/projects", icon: Briefcase, desc: "Skill saya" },
+  { label: "Skill", path: "/project", icon: Briefcase, desc: "Skill saya" },
  
 ];
 
 const moreLinks = [
-    { label: "Project", path: "/projects", icon: FolderOpenDot , desc: "Karya dan project saya" },
+    { label: "Project", path: "/project", icon: FolderOpenDot , desc: "Karya dan project saya" },
     { label: "Certification", path: "/certification", icon: Shield, desc: "Sertifikasi yang telah diperoleh" },
     { label: "Contact", path: "/contact", icon: Contact, desc: "Hubungi saya" },
     

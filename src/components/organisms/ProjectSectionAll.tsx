@@ -4,6 +4,7 @@ import Badge from "../atoms/Badge"
 import Heading from "../atoms/Heading"
 import CardProject from "../molecules/CardProject"
 import Filter from "../molecules/Filter"
+import Pagination from "../organisms/Pagination"
 
 const categoriesData = [
   
@@ -15,6 +16,8 @@ const categoriesData = [
 const ProjectSectionAll = () => {
 
     const [selectedCategory,setSelectedCategory ] = useState<number | string>("all");
+
+    const filterCatgory = selectedCategory === "all" ? projects : projects.filter((item) => item.category_role_id === selectedCategory)
     
    
     return (
@@ -37,7 +40,7 @@ const ProjectSectionAll = () => {
                 <div className="text-center py-10 text-on-surface-variant">Tidak ada project ditemukan untuk kategori ini.</div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-                    {projects.map((item) => (
+                    {filterCatgory.map((item) => (
                         <CardProject 
                             key={item.id}
                             judul={item.title} 
@@ -50,6 +53,8 @@ const ProjectSectionAll = () => {
                     ))}
                 </div>
             )}
+
+            <Pagination></Pagination>
         </>
     )
 }

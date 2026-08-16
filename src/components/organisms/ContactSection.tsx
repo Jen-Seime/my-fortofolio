@@ -1,6 +1,8 @@
 
+import { sosialLinks } from "../../constant/SosialLinks"
 import Heading from "../atoms/Heading"
 import InfoCard from "../molecules/InfoCard"
+import SosialIconRow from "../molecules/SosialIconRow"
 
 const ContactSection = () => (
     <>
@@ -18,8 +20,20 @@ const ContactSection = () => (
 
         {/* Left Column: Context & Details (Col Span 5) */}
         <div className="lg:col-span-5 flex flex-col gap-gutter">
+            {/* Contact Info Card */}
             <InfoCard/>
+
+            {/* Socials Card */}
+            <div className="bg-surface-container-lowest/80 backdrop-blur-[12px] border border-outline-variant/40 rounded-xl p-8 shadow-sm">
+                <h3 className="font-label-mono text-label-mono text-secondary mb-6 uppercase tracking-wider">Digital Footprint</h3>
+
+                <div className="flex items-center gap-4 mt-6 hero-fade-in">
+                    <SosialIconRow sosial={sosialLinks}/>
+                </div>
+            </div>
         </div>
+
+        
     </div>
     
     </>

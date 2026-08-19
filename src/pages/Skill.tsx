@@ -1,4 +1,4 @@
-import SkillTemplate from "../components/templates/SkillTamplate"
+import SkillTemplate from "../components/templates/SkillTemplate"
 
 const Skill = () => (
     <SkillTemplate></SkillTemplate>

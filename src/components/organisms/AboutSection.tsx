@@ -1,6 +1,6 @@
 
 
-import { sosialLinks } from "../../constant/SosialLinks";
+import { sosialLinks } from "../../constant/sosialLinks";
 import Badge from "../atoms/Badge"
 import Icon from "../atoms/Icon";
 

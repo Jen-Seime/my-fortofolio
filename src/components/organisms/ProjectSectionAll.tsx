@@ -17,6 +17,8 @@ const ProjectSectionAll = () => {
 
     const [selectedCategory,setSelectedCategory ] = useState<number | string>("all");
 
+    
+
     const filterCatgory = selectedCategory === "all" ? projects : projects.filter((item) => item.category_role_id === selectedCategory)
     
    

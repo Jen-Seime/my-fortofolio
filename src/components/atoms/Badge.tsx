@@ -20,7 +20,7 @@ const varianGaya : Record<variantWarna, string> = {
 const Badge = ({label, dot=false , warna, icon} : BadgeProps) => {
     return (
         <div className={`inline-flex   items-center gap-2 w-fit rounded-full px-4 py-2 mb-4 mt-2 hero-fade-in ${varianGaya[warna]} `}
-            style={{ "--delay": "0.1s" }}>
+            style={{ "--delay": "0.1s" } as React.CSSProperties}>
             {dot &&
                 <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>

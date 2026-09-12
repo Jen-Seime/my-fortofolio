@@ -27,7 +27,7 @@ const Hero = () => {
                         <Heading as="h2">Web Developer</Heading>
 
                         {/* Bio */}
-                        <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-3 leading-relaxed hero-fade-in" style={{ "--delay": "0.1s" }}>
+                        <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-3 leading-relaxed hero-fade-in" style={{ "--delay": "0.1s" } as React.CSSProperties}>
                             Mahasiswa Informatika yang berfokus pada pengembangan aplikasi web modern, dengan minat pada pembuatan sistem yang fungsional, efisien, dan memberikan pengalaman pengguna yang baik.
                         </p>
 

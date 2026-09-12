@@ -19,7 +19,7 @@ const ProjectSection = () => {
                     <Heading as={"h2"}>
                         Selected <span className=" text-primary">Projects</span>
                     </Heading>
-                    <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-3 leading-relaxed hero-fade-in" style={{ "--delay": "0.1s" }}>
+                    <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-3 leading-relaxed hero-fade-in" style={{ "--delay": "0.1s" } as React.CSSProperties}>
                         A curated collection of digital experiences crafted with performance and user experience at the core.
                     </p>
 

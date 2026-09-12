@@ -12,7 +12,7 @@ interface SosialIconRowProps {
 
 const SosialIconRow = ({sosial} : SosialIconRowProps) => {
     return (
-        <div className="flex items-center gap-4 mt-6 hero-fade-in" style={{"--delay" : "0.65s"}}>
+        <div className="flex items-center gap-4 mt-6 hero-fade-in" style={{"--delay" : "0.65s"} as React.CSSProperties}>
             <span className="w-8 h-px bg-outline-variant/40"></span>
             {sosial.map((item, index) => (
                 <Icon key={index} icon={item.icon} href={item.href}></Icon>

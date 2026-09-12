@@ -13,7 +13,7 @@ const ContactSection = () => (
             <Heading as={"h2"}>
                 Initialize <span className=" text-primary">Connection.</span>
             </Heading>
-            <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-3 leading-relaxed hero-fade-in" style={{ "--delay": "0.1s" }}>
+            <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-3 leading-relaxed hero-fade-in" style={{ "--delay": "0.1s" } as React.CSSProperties}>
                 Punya ide proyek yang udah jelas atau masih pengen ngobrolin kemungkinan-kemungkinan, kotak masuk saya selalu kebuka. Yuk bahas arsitektur, kode, sampai bikin pengalaman digital yang scalable.
             </p>
         </header>

@@ -1,48 +1,50 @@
-import { projects } from "../../constant/projects"
+
+import type { ProjectItem } from "../../types/project"
 import Badge from "../atoms/Badge"
-import Button from "../atoms/Button"
 import Heading from "../atoms/Heading"
 import CardProject from "../molecules/CardProject"
+import HeaderProject from "../molecules/HeaderProject"
 
+interface ProjectSectionProps {
+    data : ProjectItem[]
+}
 
-const ProjectSection = () => {
+const ProjectSection = ({data} : ProjectSectionProps) => {
 
-     const displayedProjects = projects.slice(0, 3)
+    
     return (
-        <section className="pt-12">
+        <section className="pt-24">
             {/* Header Project */}
-            <div className=" flex flex-col md:flex-row  md:justify-between md:items-center items-end mb-13 gap-6 ">
+            <HeaderProject>
+                <div className=" flex flex-col  items-start text-center md:items-start md:text-start">
+                    
+                    <Badge  warna="biru" icon="apps" label="Related"/>
 
-                {/* Heading */}
-                <div className=" flex flex-col items-center text-center md:items-start md:text-start">
-                    <Badge  warna="biru" icon="work" label="Portofolio"/>
-                    <Heading as={"h2"}>
+                    
+                    <Heading className="font-headline-xl !text-[clamp(24px,3.5vw,32px)]" as={"h2"}>
                         Selected <span className=" text-primary">Projects</span>
                     </Heading>
-                    <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-3 leading-relaxed hero-fade-in" style={{ "--delay": "0.1s" } as React.CSSProperties}>
-                        A curated collection of digital experiences crafted with performance and user experience at the core.
-                    </p>
 
+                    
                 </div>
+            </HeaderProject>
+            
 
-                {/* Button all */}
-                <Button   icon="arrow_forward" variant="putih" ukuran="kecil"  posisi="kiri">View All</Button>
-            </div>
-
-            {displayedProjects.length === 0 ? (
+            {data.length === 0 ? (
                 <div className="">kosong</div>
             ) : (
 
                 <div className=" grid grid-cols-1 md:grid-cols-3 gap-gutter">
-                    {displayedProjects.map((item) => (
-                        <CardProject 
+                    {data.map((item) => (
+                         <CardProject 
                             key={item.id}
                             judul={item.title} 
                             deskripsi={item.description}
-                            stack={item.tags} 
+                            stack={item.technology} 
                             img={item.image}
-                            code={item.codeUrl}
-                            liveDemo={item.demoUrl}
+                            code={item.github_link}
+                            liveDemo={item.demo_link}
+                            slug={item.slug}
                         />
                     ))}
                     

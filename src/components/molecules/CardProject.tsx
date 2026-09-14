@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 interface CardProjectProps {
     img?: string | null
@@ -46,12 +46,17 @@ const CardProject = ({
     code,
     slug
 }: CardProjectProps) => {
+    const navigate = useNavigate();
     const formattedCodeUrl = formatExternalUrl(code, true);
     const formattedLiveUrl = formatExternalUrl(liveDemo);
     const cleanDescription = formatDescriptionPreview(deskripsi);
 
+    const handleCardClick = () => {
+        navigate(slug ? `/project/${slug}` : "/detail");
+    };
+
     return (
-        <NavLink to={slug ? `/project/${slug}` : "/detail"} className="h-full flex flex-col">
+        <div onClick={handleCardClick} className="h-full flex flex-col cursor-pointer">
             <div className="h-full flex flex-col rounded-xl glass-panel overflow-hidden group glow-effect hover:border-primary/30 transition-all duration-300 hover:-translate-y-2">
                 {/* img container */}
                 <div className="h-48 w-full opacity-90 overflow-hidden bg-surface-container-high shrink-0 relative">
@@ -129,7 +134,7 @@ const CardProject = ({
                     </div>
                 </div>
             </div>
-        </NavLink>
+        </div>
     )
 }
 

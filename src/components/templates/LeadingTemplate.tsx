@@ -9,12 +9,13 @@ const LeadingTempalte = () => {
     return (
         <>
             <Navbar/>
+            
             <main className="pt-13 pb-section-gap  flex-grow max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
              <Hero/>
 
              <StatCardRow items={stats}/>
 
-             <ProjectSection/>
+             {/* <ProjectSection/> */}
              
             </main>
 

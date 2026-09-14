@@ -1,17 +1,22 @@
+export interface ThumbnailItem {
+  id: number;
+  url: string;
+}
+
+
 export interface ProjectItem {
   id: number;
   title: string;
   slug: string;
   description: string;
-  content: string | null;
-  client: string | null;
   date: string | null;
-  link: string | null;         // Live demo / URL website
+  demo_link: string | null;         // Live demo / URL website
   github_link: string | null;  // Repository Github / source code
   technology: string[];       // Array stack teknologi (contoh: ["Laravel", "react"])
   is_featured: boolean;
   category_role_id: number;
   image: string;              // URL gambar
+  thumbnails: ThumbnailItem[] | null;         // URL gambar
   created_at: string;
   updated_at: string;
 }

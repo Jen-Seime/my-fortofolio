@@ -18,6 +18,8 @@ const Filter = ({ categories, activeCatgory, onSelectCategory} : FilterProps) =>
                 className={`px-4 py-2 rounded-lg font-label-mono text-label-mono border transition-colors ${activeCatgory === "all" ? "bg-primary/10 text-primary border-primary/20" : "text-on-surface-variant hover:bg-surface-variant hover:text-on-surface border-transparent" } `}>
                 All
             </button>
+
+            
             {categories.map((item) => {
                 const isAcitive = item.id === activeCatgory
 

@@ -137,7 +137,7 @@ const ProjectSectionAll = () => {
                             stack={item.technology} 
                             img={item.image}
                             code={item.github_link}
-                            liveDemo={item.link}
+                            liveDemo={item.demo_link}
                             slug={item.slug}
                         />
                     ))}

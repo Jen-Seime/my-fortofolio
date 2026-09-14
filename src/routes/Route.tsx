@@ -5,6 +5,7 @@ import About from "../pages/About"
 import Skill from "../pages/Skill"
 import Project from "../pages/Project"
 import Contact from "../pages/Contact"
+import ProjectDetail from "../pages/ProjectDetail"
 
 
 const routes: RouteObject[] = [
@@ -27,6 +28,10 @@ const routes: RouteObject[] = [
     {
         path: "/Contact",
         element: <Contact/>
+    },
+    {
+        path: "/project/:slug",
+        element: <ProjectDetail/>
     }
 ]
 

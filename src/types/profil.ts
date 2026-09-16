@@ -1,0 +1,16 @@
+export interface ProfilItem {
+    id : string,
+    full_name: string,
+    nickname: string,
+    role: string,
+    phone: string,
+    email: string,
+    address: string,
+    bio: string,
+    about: string,
+    github: string,
+    linkedin: string,
+    instagram: string,
+    cv_file: string,
+    image: string,
+}

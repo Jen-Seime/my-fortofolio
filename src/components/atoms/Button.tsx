@@ -1,4 +1,5 @@
 import type React from "react"
+import { Link } from "react-router-dom"
 type buttonVariant = "primary" | "putih" | "biruBening"
 type ukuranButton = "kecil" | "sedang"
 type variantHoverButton = "kiri" | "bawah"
@@ -12,7 +13,9 @@ interface ButtonProps {
     positionIcon?: "left" | "right",
     posisi : variantHoverButton 
     icon?: string,
-    className?: string
+    className?: string,
+    href?: string
+    to?:string
 }
 
 const variantStyle : Record<buttonVariant, string> = {
@@ -32,14 +35,25 @@ const variantPosisiHover : Record<variantHoverButton, string> = {
     bawah: "group-hover:translate-y-1 "
 }
 
-const Button = ({children, onClick, className, ukuran = "kecil", posisi, variant= "primary", positionIcon= "left", icon}: ButtonProps) => {
-    return (
-        <button className={`cursor-pointer  flex items-center font-medium transition-all duration-300 ease-in-out  ${variantButton[ukuran]}   ${variantStyle[variant]} ${className}`} onClick={onClick}>
-            {icon && positionIcon == "right" &&  <span className={`material-symbols-outlined text-[18px] relative z-10 ${variantPosisiHover[posisi]}  transition-transform duration-300`}>{icon}</span>}
-            {children}
-            {icon && positionIcon == "left" && <span className={`material-symbols-outlined text-[18px] relative z-10 transition-transform ${variantPosisiHover[posisi]} duration-300`}>{icon}</span>}
-        </button>
-    )
+const Button = ({children, onClick, className, ukuran = "kecil", posisi, variant= "primary", positionIcon= "left", icon, href, to}: ButtonProps) => {
+
+    if(to) {
+        return (
+            <Link to={to} className={`cursor-pointer  flex items-center font-medium transition-all duration-300 ease-in-out  ${variantButton[ukuran]}   ${variantStyle[variant]} ${className}`} onClick={onClick}>
+                {icon && positionIcon == "right" &&  <span className={`material-symbols-outlined text-[18px] relative z-10 ${variantPosisiHover[posisi]}  transition-transform duration-300`}>{icon}</span>}
+                {children}
+                {icon && positionIcon == "left" && <span className={`material-symbols-outlined text-[18px] relative z-10 transition-transform ${variantPosisiHover[posisi]} duration-300`}>{icon}</span>}
+            </Link>
+        )
+    }else {
+        return (
+            <a href={href} target="_blank" className={`cursor-pointer  flex items-center font-medium transition-all duration-300 ease-in-out  ${variantButton[ukuran]}   ${variantStyle[variant]} ${className}`} onClick={onClick}>
+                {icon && positionIcon == "right" &&  <span className={`material-symbols-outlined text-[18px] relative z-10 ${variantPosisiHover[posisi]}  transition-transform duration-300`}>{icon}</span>}
+                {children}
+                {icon && positionIcon == "left" && <span className={`material-symbols-outlined text-[18px] relative z-10 transition-transform ${variantPosisiHover[posisi]} duration-300`}>{icon}</span>}
+            </a>
+        )
+    }
 }
 
 export default Button

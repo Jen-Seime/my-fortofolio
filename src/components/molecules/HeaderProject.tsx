@@ -30,7 +30,7 @@ const HeaderProject = ({ className, children }: HeaderProjectProps) => {
                 {children}
 
                 {/* Button all */}
-                <Button   icon="arrow_forward" variant="putih" ukuran="kecil"  posisi="kiri">View All</Button>
+                <Button to="/project"   icon="arrow_forward" variant="putih" ukuran="kecil"  posisi="kiri">View All</Button>
             </div>
         </>
     )

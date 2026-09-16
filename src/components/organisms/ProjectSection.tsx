@@ -6,28 +6,17 @@ import CardProject from "../molecules/CardProject"
 import HeaderProject from "../molecules/HeaderProject"
 
 interface ProjectSectionProps {
-    data : ProjectItem[]
+    data : ProjectItem[],
+    children?: React.ReactNode
 }
 
-const ProjectSection = ({data} : ProjectSectionProps) => {
+const ProjectSection = ({data, children} : ProjectSectionProps) => {
 
     
     return (
         <section className="pt-24">
             {/* Header Project */}
-            <HeaderProject>
-                <div className=" flex flex-col  items-start text-center md:items-start md:text-start">
-                    
-                    <Badge  warna="biru" icon="apps" label="Related"/>
-
-                    
-                    <Heading className="font-headline-xl !text-[clamp(24px,3.5vw,32px)]" as={"h2"}>
-                        Selected <span className=" text-primary">Projects</span>
-                    </Heading>
-
-                    
-                </div>
-            </HeaderProject>
+           {children}
             
 
             {data.length === 0 ? (

@@ -8,6 +8,7 @@ import {  getProjects, getProjectsBySlug } from "../../services/projects.service
 import ProjectSection from "../organisms/ProjectSection"
 import Badge from "../atoms/Badge"
 import Heading from "../atoms/Heading"
+import HeaderProject from "../molecules/HeaderProject"
 
 const ProjectDetailTemplate = () => {
     const { slug } = useParams<{ slug: string }>()
@@ -110,16 +111,18 @@ const ProjectDetailTemplate = () => {
 
 
             <ProjectSection data={projects}>
-                <div className=" flex flex-col  items-start text-center md:items-start md:text-start">
+                <HeaderProject>
+                    <div className=" flex flex-col  items-start text-center md:items-start md:text-start">
                         
-                    <Badge  warna="biru" icon="apps" label="Related"/>
+                        <Badge  warna="biru" icon="work" label="Related"/>
 
-                    
-                    <Heading className="font-headline-xl !text-[clamp(24px,3.5vw,32px)]" as={"h2"}>
-                        Selected <span className=" text-primary">Projects</span>
-                    </Heading>
+                        
+                        <Heading className="font-headline-xl !text-[clamp(24px,3.5vw,32px)]" as={"h2"}>
+                            Selected <span className=" text-primary">Projects</span>
+                        </Heading>
 
-                </div>
+                    </div>
+                </HeaderProject>
             </ProjectSection>
         </main>
     )

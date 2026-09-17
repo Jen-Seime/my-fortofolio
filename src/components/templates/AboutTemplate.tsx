@@ -7,6 +7,8 @@ import FutureTrajectory from "../organisms/FutureTrajectory"
 import { useEffect, useState } from "react"
 import type { ProfilItem } from "../../types/profil"
 import { getProfiles } from "../../services/profiles.service"
+import type { experienceItem } from "../../types/experiences"
+import { getExperiences } from "../../services/experiences.service"
 
 const AboutTemplate = () => {
 
@@ -31,6 +33,28 @@ const AboutTemplate = () => {
     }, []);
 
 
+    const [experiences, setExperiences] = useState<experienceItem[]>([]);
+    const [expLoading, setExpLoading] = useState<boolean>(false);
+
+
+    useEffect(() => {
+        const fetchExperiences = async() => {
+            setExpLoading(true);
+            try {
+                const response = await getExperiences();
+                setExperiences(response.data);
+            } catch (err) {
+                console.error("Gagal mengambil data pengalaman:", err);
+            } finally {
+                setExpLoading(false);
+            }
+        }
+
+        fetchExperiences();
+    }, []);
+
+
+     console.log(experiences);
 
 
     return (
@@ -42,7 +66,7 @@ const AboutTemplate = () => {
 
              <AboutSection isLoading={loadingProfil} data={profiles}/>
 
-             <ExperienceEvolution/>
+             <ExperienceEvolution data={experiences} isLoading={expLoading}/>
 
              <AcademicFoundation/>
 

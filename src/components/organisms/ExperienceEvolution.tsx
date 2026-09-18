@@ -1,5 +1,5 @@
 import { experiences } from "../../constant/experiences";
-import type { experienceItem } from "../../types/experiences";
+import type { experienceItem } from "../../types/experience";
 import SectionHedaer from "../molecules/SectionHeader";
 import TimelineCard from "../molecules/TimelineCard";
 import TimelineCardSkeleton from "../molecules/TimelineCardSkeleton";

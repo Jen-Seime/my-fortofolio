@@ -7,8 +7,10 @@ import FutureTrajectory from "../organisms/FutureTrajectory"
 import { useEffect, useState } from "react"
 import type { ProfilItem } from "../../types/profil"
 import { getProfiles } from "../../services/profiles.service"
-import type { experienceItem } from "../../types/experiences"
+import type { experienceItem } from "../../types/experience"
 import { getExperiences } from "../../services/experiences.service"
+import type { EducationItem } from "../../types/education"
+import { getEducations } from "../../services/educations.service"
 
 const AboutTemplate = () => {
 
@@ -40,6 +42,7 @@ const AboutTemplate = () => {
     useEffect(() => {
         const fetchExperiences = async() => {
             setExpLoading(true);
+
             try {
                 const response = await getExperiences();
                 setExperiences(response.data);
@@ -53,8 +56,27 @@ const AboutTemplate = () => {
         fetchExperiences();
     }, []);
 
+    const [education, setEducation] = useState<EducationItem[]>([])
+    const [loadingEdu, setLoadingEdu] = useState<boolean>(false);
 
-     console.log(experiences);
+    useEffect(() => {
+        const fetchEducations = async () => {
+            setLoadingEdu(true);
+            try {
+                const response = await getEducations();
+                setEducation(response.data);
+            }catch (err) {
+                console.error("Gagal mengambil data pengalaman:", err);
+            }finally {
+                setLoadingEdu(false)
+            }
+        };
+
+        fetchEducations();
+    },[])
+
+
+     
 
 
     return (
@@ -68,9 +90,9 @@ const AboutTemplate = () => {
 
              <ExperienceEvolution data={experiences} isLoading={expLoading}/>
 
-             <AcademicFoundation/>
+             <AcademicFoundation isLoading={loadingEdu} data={education}/>
 
-             <FutureTrajectory/>
+             {/* <FutureTrajectory/> */}
 
             </main>
 

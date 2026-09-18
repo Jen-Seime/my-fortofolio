@@ -74,7 +74,7 @@ const LeadingTempalte = () => {
 
              <ProjectSection data={project}>
                 <HeaderProject>
-                    <div className=" flex flex-col  items-start text-center md:items-start md:text-start">
+                    <div className=" flex flex-col  items-start  md:items-start md:text-start">
                         
                         <Badge  warna="biru" icon="work" label="Related"/>
 

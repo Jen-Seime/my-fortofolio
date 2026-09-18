@@ -1,5 +1,5 @@
 
-import type { experienceItem } from "../../types/experiences";
+import type { experienceItem } from "../../types/experience";
 
 interface TimelineCardProps {
   experience: experienceItem;

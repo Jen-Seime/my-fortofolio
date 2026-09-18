@@ -8,7 +8,7 @@ interface HeaderProjectProps {
 const HeaderProject = ({ className, children }: HeaderProjectProps) => {
     return (
         <>
-            <div className={`flex justify-between items-center md:flex-row  md:justify-between md:items-center  mb-13 gap-6  ${className}  `}>
+            <div className={`flex justify-between items-end md:flex-row  md:justify-between md:items-center  mb-13 gap-6  ${className}  `}>
 
                 {/* Heading
                 <div className=" flex flex-col items-center text-center md:items-start md:text-start">

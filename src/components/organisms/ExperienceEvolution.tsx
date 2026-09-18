@@ -1,8 +1,15 @@
 import { experiences } from "../../constant/experiences";
+import type { experienceItem } from "../../types/experience";
 import SectionHedaer from "../molecules/SectionHeader";
 import TimelineCard from "../molecules/TimelineCard";
+import TimelineCardSkeleton from "../molecules/TimelineCardSkeleton";
 
-const ExperienceEvolution = () => (
+interface ExpProps {
+    data : experienceItem[]
+    isLoading : boolean
+}
+
+const ExperienceEvolution = ({data, isLoading} : ExpProps) => (
     <section className="about-fade-in flex flex-col items-center w-full">
         {/* ── Section Header ── */}
         <SectionHedaer
@@ -25,9 +32,15 @@ const ExperienceEvolution = () => (
 
                 {/* Timeline entries */}
                 <div className="flex flex-col md:gap-12 gap-2">
-                    {experiences.map((exp, i) => (
-                        <TimelineCard key={exp.id} experience={exp} index={i} />
-                    ))}
+                    {isLoading ? (
+                        Array.from({ length: 3 }).map((_, i) => (
+                            <TimelineCardSkeleton index={i} key={i} />
+                        ))
+                    ) : (
+                        data.map((exp, i) => (
+                            <TimelineCard key={exp.id} experience={exp} index={i} />
+                        ))
+                    )}
                 </div>
 
                 {/* End dot */}

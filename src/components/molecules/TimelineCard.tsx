@@ -1,14 +1,15 @@
-import type { Experience } from "../../constant/experiences";
+
+import type { experienceItem } from "../../types/experience";
 
 interface TimelineCardProps {
-  experience: Experience;
+  experience: experienceItem;
   index: number;
 }
 
-const typeStyles: Record<Experience["type"], { bg: string; label: string }> = {
-  work: { bg: "bg-primary/10 text-primary", label: "Kerja" },
-  freelance: { bg: "bg-emerald-500/10 text-emerald-600", label: "Freelance" },
-  education: { bg: "bg-amber-500/10 text-amber-600", label: "Pendidikan" },
+const typeStyles: Record<experienceItem["type"], { bg: string; label: string, icon: string }> = {
+  work: { bg: "bg-primary/10 text-primary", label: "Kerja", icon:"web"},
+  freelance: { bg: "bg-emerald-500/10 text-emerald-600", label: "Freelance", icon: "code" },
+  education: { bg: "bg-amber-500/10 text-amber-600", label: "Pendidikan" , icon: "school"},
 };
 
 const TimelineCard = ({ experience, index }: TimelineCardProps) => {
@@ -39,7 +40,7 @@ const TimelineCard = ({ experience, index }: TimelineCardProps) => {
         {/* Dot */}
         <div className="relative z-10 w-12 h-12 rounded-xl bg-white border-2 border-primary/30 flex items-center justify-center shadow-lg timeline-dot group-hover:border-primary group-hover:scale-110 transition-all duration-300">
           <span className="material-symbols-outlined text-primary text-[20px]">
-            {experience.icon}
+            {typeStyle.icon}
           </span>
 
           {/* Year badge beside dot */}
@@ -48,7 +49,7 @@ const TimelineCard = ({ experience, index }: TimelineCardProps) => {
               isLeft ? "left-full ml-4" : "right-full mr-4"
             }`}
           >
-            {experience.year}
+           {new Date(experience.start_date).getFullYear()}
           </span>
         </div>
       </div>
@@ -66,7 +67,7 @@ const TimelineCard = ({ experience, index }: TimelineCardProps) => {
         <div className="flex flex-col items-center shrink-0">
           <div className="relative z-10 w-10 h-10 rounded-xl bg-white border-2 border-primary/30 flex items-center justify-center shadow-lg timeline-dot">
             <span className="material-symbols-outlined text-primary text-[18px]">
-              {experience.icon}
+              {typeStyle.icon}
             </span>
           </div>
           <div className="w-0.5 flex-1 bg-gradient-to-b from-primary/30 to-transparent mt-2" />
@@ -86,7 +87,7 @@ const TimelineCard = ({ experience, index }: TimelineCardProps) => {
 
 /* ── Shared card content ── */
 interface CardContentProps {
-  experience: Experience;
+  experience: experienceItem;
   align: "left" | "right";
   typeStyle: { bg: string; label: string };
 }
@@ -100,7 +101,7 @@ const CardContent = ({ experience, align, typeStyle }: CardContentProps) => (
       }`}
     >
       <span className="font-label-mono text-[11px] text-on-surface-variant/60 tracking-wider uppercase">
-        {experience.period}
+        {new Date(experience.start_date).getFullYear()} — {experience.end_date ? new Date(experience.end_date).getFullYear() : 'Sekarang'}
       </span>
       <span
         className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium ${typeStyle.bg}`}
@@ -118,9 +119,12 @@ const CardContent = ({ experience, align, typeStyle }: CardContentProps) => (
     </p>
 
     {/* Description */}
-    <p className="font-body-md text-[14px] text-on-surface-variant leading-relaxed mb-4">
-      {experience.description}
-    </p>
+    <div className="font-body-md text-[14px] text-on-surface-variant leading-relaxed mb-4">
+     
+     
+      {experience.description.replace(/<[^>]+>/g, '')}
+     
+    </div>
 
     {/* Achievements */}
     <div className="mb-4">

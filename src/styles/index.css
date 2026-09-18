@@ -470,4 +470,26 @@
     .timeline-dot {
         box-shadow: 0 0 10px rgba(0, 64, 224, 0.3);
     }
+
+    /* ===== Skeleton shimmer loading ===== */
+    .skeleton-shimmer {
+        background: linear-gradient(
+            90deg,
+            rgba(196, 197, 217, 0.25) 0%,
+            rgba(196, 197, 217, 0.55) 40%,
+            rgba(196, 197, 217, 0.25) 80%
+        );
+        background-size: 200% 100%;
+        animation: shimmerMove 1.6s ease-in-out infinite;
+        border-radius: 0.5rem;
+    }
+
+    @keyframes shimmerMove {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
+        }
+    }
 }

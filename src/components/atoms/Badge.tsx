@@ -7,6 +7,7 @@ interface BadgeProps {
     dot ?: boolean
     icon?: string
     warna : variantWarna
+    href?: string
  
     
 }
@@ -17,9 +18,9 @@ const varianGaya : Record<variantWarna, string> = {
 }
 
 
-const Badge = ({label, dot=false , warna, icon} : BadgeProps) => {
+const Badge = ({label, dot=false , warna, icon, href} : BadgeProps) => {
     return (
-        <div className={`inline-flex   items-center gap-2 w-fit rounded-full px-4 py-2 mb-4 mt-2 hero-fade-in ${varianGaya[warna]} `}
+        <div className={`inline-flex    items-center gap-2 w-fit rounded-full px-4 py-2 mb-4 mt-2 hero-fade-in ${varianGaya[warna]} ${href} `}
             style={{ "--delay": "0.1s" } as React.CSSProperties}>
             {dot &&
                 <span className="relative flex h-2 w-2">

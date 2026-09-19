@@ -18,7 +18,7 @@ const Hero = ({ data }: HeroProps) => {
         <section className="min-h-[85vh] md:mt-32 flex flex-col justify-center relative mb-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
                 <div className="lg:col-span-7 flex flex-col gap-4 z-10">
-                    <Badge dot warna="biru"   label="Available for work"/>
+                    <Badge href="!hidden" dot warna="biru"   label="Available for work"/>
 
                     <div className="hero-fade-in">
                         <Heading>
@@ -48,7 +48,7 @@ const Hero = ({ data }: HeroProps) => {
                 </div>
 
                 {/* hero visual/image */}
-                <div className="lg:col-span-5 relative order-first lg:order-last mb-16 lg:mb-0 flex justify-center lg:block hero-fade-in">
+                <div className="lg:col-span-5 relative order-first lg:order-last mb-4 md:mb-0 flex justify-center lg:block hero-fade-in">
 
                     {/* main image container */}
                     <div className="relative group">

@@ -1,8 +1,16 @@
-import { skills } from "../../constant/skills"
+
+import type { categorySkill } from "../../types/skill"
 import CardSkill from "../molecules/CardSkill"
+import CardSkillSkeleton from "../molecules/CardSkillSkelaton";
 import SectionHedaer from "../molecules/SectionHeader"
 
-const SkillSection = () => (
+interface skillSectionProps {
+    data : categorySkill[];
+    isLoading: boolean;
+  
+   
+}
+const SkillSection = ({data,isLoading} : skillSectionProps) => (
     <section className="about-fade-in flex flex-col items-center w-full">
          <SectionHedaer 
             icon="construction"
@@ -13,9 +21,24 @@ const SkillSection = () => (
         </SectionHedaer>
 
         <div className="w-full  grid grid-cols-1 md:grid-cols-3 gap-6">
-            {skills.map((skil) => (
-                <CardSkill key={skil.id} categoryData={skil} />
-            ))}
+            {isLoading ? (
+                <>
+                    {[1,2,3].map((m) => (
+                        <CardSkillSkeleton key={m}/>
+                    ))}
+                </>
+                   
+            ) :data.length === 0 ? (
+                <div className=""></div>
+            ) : (
+                <>
+                    {data.map((skil, i) => (
+                        <CardSkill key={i} index={i} categoryData={skil} />
+                    ))}
+                </>
+               
+            )}
+           
         </div>
     </section>
    

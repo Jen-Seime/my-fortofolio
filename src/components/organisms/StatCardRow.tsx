@@ -1,28 +1,24 @@
 import StatCard from "../molecules/StatCard"
-import type { PaginationMeta } from "../../types/project"
 
-interface StatCardRowProps {
-    items?: PaginationMeta
-    className?: string
+interface StatItem {
+    value: string;
+    label: string;
 }
 
-const StatCardRow = ({ items, className }: StatCardRowProps) => {
-    const stats = [
-        { value: "3", label: "YEARS EXP." },
-        { value: `${items?.total}` || "", label: "PROJECTS" },
-        { value: "", label: "DEDICATION" },
-        { value: "", label: "CURIOSITY" },
-    ]
-
+interface StatCardRowProps {
+    items?: StatItem[];
    
-    
+    className?: string;
 
-   
+}
+
+const StatCardRow = ({ items = [], className }: StatCardRowProps) => {
     return (
-
-
-        <div className={`grid  grid-cols-2 md:grid-cols-4  items-center gap-4 mt-20 hero-fade-in ${className}`} style={{ "--delay": "0.75s" } as React.CSSProperties}>
-            {stats.map((item, index) => (
+        <div 
+            className={`grid grid-cols-2 md:grid-cols-4 items-center gap-4 mt-20 hero-fade-in ${className || ""}`} 
+            style={{ "--delay": "0.75s" } as React.CSSProperties}
+        >
+            {items.map((item, index) => (
                 <StatCard key={index} value={item.value} label={item.label} />
             ))}
         </div>

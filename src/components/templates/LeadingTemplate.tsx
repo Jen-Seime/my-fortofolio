@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react"
-import { stats } from "../../constant/stats"
 import Footer from "../organisms/Footer"
 import Hero from "../organisms/Hero"
 import Navbar from "../organisms/Navbar"
 import ProjectSection from "../organisms/ProjectSection"
-import StatCardRow from "../organisms/StatCardRow"
 import type { ProfilItem } from "../../types/profil"
 import { getProfiles } from "../../services/profiles.service"
 import type { PaginationMeta, ProjectItem } from "../../types/project"
@@ -67,10 +65,10 @@ const LeadingTempalte = () => {
         <>
             <Navbar/>
             
-            <main className="pt-13 pb-section-gap  flex-grow max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <main className=" pt-28 md:pt-13 pb-section-gap  flex-grow max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
              <Hero data={profiles} />
 
-             <StatCardRow items={meta}/>
+             {/* <StatCardRow items={meta}/> */}
 
              <ProjectSection data={project}>
                 <HeaderProject>

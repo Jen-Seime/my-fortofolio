@@ -14,7 +14,7 @@ const navLinks = [
 const mobileLinks = [
   { label: "Home", path: "/", icon: Home, desc: "Halaman utama" },
   { label: "About", path: "/about", icon: User, desc: "Tentang saya" },
-  { label: "Skill", path: "/project", icon: Briefcase, desc: "Skill saya" },
+  { label: "Skill", path: "/skill", icon: Briefcase, desc: "Skill saya" },
  
 ];
 

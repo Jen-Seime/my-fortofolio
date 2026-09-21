@@ -17,6 +17,7 @@ const AcademicFoundation = ({data,isLoading} : AcademicFoundationProps) => (
     
 
     <SectionHedaer 
+      posisi="tengah"
       icon="school" 
       deskripsi="Fondasi akademik yang membentuk pola pikir analitis dan kemampuan teknis saya sebagai seorang developer.">
       Academic <span className="text-primary">Foundation</span>

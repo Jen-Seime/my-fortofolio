@@ -8,6 +8,7 @@ import { getProjects } from "../../services/projects.service"
 import type { ProjectItem, PaginationMeta } from "../../types/project"
 import { getCategories } from "../../services/categories.service"
 import type { CategoryItem } from "../../types/category"
+import SectionHedaer from "../molecules/SectionHeader"
 
 
 
@@ -71,7 +72,7 @@ const ProjectSectionAll = () => {
 
     return (
         <>
-            <header className="b-stack-xl text-center md:text-left">
+            {/* <header className="b-stack-xl text-center md:text-left">
                 <Badge warna="biru" icon="work" label="Portofolio"/>
                 <Heading as={"h2"}>
                     Selected <span className="text-primary">Projects</span>
@@ -82,7 +83,17 @@ const ProjectSectionAll = () => {
                 >
                     A curated collection of digital experiences crafted with performance and user experience at the core.
                 </p>
-            </header>
+            </header> */}
+
+            <SectionHedaer 
+                labelBadge="Portfolio"
+                posisi="kiri"
+                icon="code"
+                deskripsi="A curated collection of digital experiences crafted with performance and user experience at the core."
+            >
+                Selected <span className="text-primary">Projects</span>
+            </SectionHedaer>
+
 
             <Filter 
                 categories={categories} 

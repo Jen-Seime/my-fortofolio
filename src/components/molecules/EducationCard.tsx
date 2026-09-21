@@ -58,44 +58,39 @@ const EducationCard = ({id,institution,gpa,degree,coursework,start_year,end_year
 
                     {/* Title block */}
                     <div className="flex-1 min-w-0">
+                        {/* Degree + status badge */}
                         <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <h3 className="font-headline-lg text-[20px] md:text-[24px] text-on-surface font-semibold leading-tight">
-                            {degree}
-                        </h3>
-                        <span
-                            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium 
-                            ${end_year === null
-                                ? "bg-emerald-500/10 text-emerald-600"
-                                : "bg-primary/10 text-primary"
-
-
-                            }`
-                        
-                        }
-                        >
-                            {end_year === null && (
-                            <span className="relative flex h-1.5 w-1.5">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+                            <h3 className="font-headline-lg text-[20px] md:text-[22px] text-on-surface font-semibold leading-tight">
+                                {degree}
+                            </h3>
+                            <span
+                                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide ${
+                                    end_year === null
+                                        ? "bg-emerald-500/10 text-emerald-600 border border-emerald-500/20"
+                                        : "bg-primary/10 text-primary border border-primary/20"
+                                }`}
+                            >
+                                {end_year === null && (
+                                    <span className="relative flex h-1.5 w-1.5">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+                                    </span>
+                                )}
+                                {end_year ?? "Sedang Berlangsung"}
                             </span>
-                            )}
-                            {end_year ?? "Sedang Berlangsung"}
-                        </span>
                         </div>
 
-                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-on-surface-variant">
-                        <span className="inline-flex items-center gap-1.5">
-                            <span className="material-symbols-outlined text-primary/60 text-[16px]">
-                            apartment
+                        {/* Meta info row */}
+                        <div className="flex flex-wrap items-center gap-y-1 text-[13px] text-on-surface-variant">
+                            <span className="inline-flex items-center gap-1.5">
+                                <span className="material-symbols-outlined text-primary/50 text-[15px]">apartment</span>
+                                <span>{institution}</span>
                             </span>
-                            {institution}
-                        </span>
-                        <span className="inline-flex items-center gap-1.5">
-                            <span className="material-symbols-outlined text-primary/60 text-[16px]">
-                            calendar_today
+                            <span className="mx-2.5 text-outline-variant/40">·</span>
+                            <span className="inline-flex items-center gap-1.5">
+                                <span className="material-symbols-outlined text-primary/50 text-[15px]">calendar_today</span>
+                                <span>{start_year} – {end_year ?? "Sekarang"}</span>
                             </span>
-                            {start_year} - {end_year ?? "Sekarang"}
-                        </span>
                         </div>
                     </div>
 

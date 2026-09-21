@@ -4,7 +4,7 @@ import GoBack from "../atoms/GoBack"
 import CoverSection from "../organisms/CoverSection"
 import MainContentGrid from "../organisms/MainContentGrid"
 import type { ProjectItem } from "../../types/project"
-import {  getProjects, getProjectsBySlug } from "../../services/projects.service"
+import {   getProjectsBySlug, getRelatedProjects } from "../../services/projects.service"
 import ProjectSection from "../organisms/ProjectSection"
 import Badge from "../atoms/Badge"
 import Heading from "../atoms/Heading"
@@ -17,29 +17,26 @@ const ProjectDetailTemplate = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
-    const [projects, setProjects] = useState<ProjectItem[]>([])
+    const [relatedProjects, setRelatedProjects] = useState<ProjectItem[]>([])
   
 
 
     useEffect(() => {
-        if (!slug) return
-        
+        if (!slug || !projectById) return;
+
         const fetchProjects = async () => {
-           
-            const response = await getProjects()
+            const response = await getRelatedProjects(projectById?.category_role_id);
+            const result = response;
 
-            const result = response.data
-           
-            .filter((project) => project.slug !== slug)
-            
-            
+            const relatedProjects = result
+                .filter((project) => project.slug !== slug)
+               
 
+            setRelatedProjects(relatedProjects);
+        };
 
-            setProjects(result)
-        }
-
-        fetchProjects()
-    }, [slug]);
+        fetchProjects();
+    }, [slug, projectById]);
 
 
 
@@ -109,21 +106,24 @@ const ProjectDetailTemplate = () => {
                 </>
             )}
 
-
-            <ProjectSection data={projects}>
+            {relatedProjects.length > 0  && (
+                <ProjectSection data={relatedProjects}>
                 <HeaderProject>
                     <div className=" flex flex-col  items-start text-center md:items-start md:text-start">
                         
-                        <Badge  warna="biru" icon="work" label="Related"/>
+                        {/* <Badge  warna="biru" icon="work" label="Related apps"/> */}
 
                         
                         <Heading className="font-headline-xl !text-[clamp(24px,3.5vw,32px)]" as={"h2"}>
-                            Selected <span className=" text-primary">Projects</span>
+                            Related  <span className=" text-primary">Apps</span>
                         </Heading>
 
                     </div>
                 </HeaderProject>
             </ProjectSection>
+            )}
+
+            
         </main>
     )
 }

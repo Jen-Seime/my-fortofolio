@@ -6,6 +6,8 @@ import Skill from "../pages/Skill"
 import Project from "../pages/Project"
 import Contact from "../pages/Contact"
 import ProjectDetail from "../pages/ProjectDetail"
+import Certification from "../pages/Certification"
+import CertificationDetail from "../pages/CerficationDetail"
 
 // eslint-disable-next-line react-refresh/only-export-components
 const RootLayout = () => {
@@ -41,12 +43,20 @@ const routes: RouteObject[] = [
         element: <Project/>
     },
     {
+        path: "/certification",
+        element: <Certification/>
+    },
+    {
         path: "/Contact",
         element: <Contact/>
     },
     {
         path: "/project/:slug",
         element: <ProjectDetail/>
+    },
+    {
+        path: "/certification/:slug",
+        element: <CertificationDetail/>
     }
 ]
 }

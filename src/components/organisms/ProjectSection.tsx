@@ -1,9 +1,6 @@
 
 import type { ProjectItem } from "../../types/project"
-import Badge from "../atoms/Badge"
-import Heading from "../atoms/Heading"
 import CardProject from "../molecules/CardProject"
-import HeaderProject from "../molecules/HeaderProject"
 
 interface ProjectSectionProps {
     data : ProjectItem[],

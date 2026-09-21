@@ -73,12 +73,12 @@ const AboutSection = ({ isLoading = false, data }: AboutSectionProps) => {
                                 {/* Info chips */}
                                 <div className="flex flex-col gap-2">
                                     <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-surface-container/60 border border-outline-variant/15">
-                                        <span className="material-symbols-outlined text-primary text-[16px] shrink-0">location_on</span>
+                                        <span className="material-symbols-outlined text-primary/50 text-[16px] shrink-0">location_on</span>
                                         <span className="text-[12px] text-on-surface-variant truncate">{data?.address}</span>
                                     </div>
                                 
                                     <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-surface-container/60 border border-outline-variant/15">
-                                        <span className="material-symbols-outlined text-primary text-[16px] shrink-0">mail</span>
+                                        <span className="material-symbols-outlined text-primary/50 text-[16px] shrink-0">mail</span>
                                         <span className="text-[12px] text-on-surface-variant truncate">{emailObj}</span>
                                     </div>
                                 </div>

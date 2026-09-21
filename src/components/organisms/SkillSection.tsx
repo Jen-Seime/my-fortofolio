@@ -12,12 +12,13 @@ interface skillSectionProps {
 }
 const SkillSection = ({data,isLoading} : skillSectionProps) => (
     <section className="about-fade-in flex flex-col items-center w-full">
-         <SectionHedaer 
-            icon="construction"
+        <SectionHedaer 
+            posisi="tengah"
+            icon="terminal"
+            labelBadge="Tech Stack"
             deskripsi="Gambaran menyeluruh tentang languages, frameworks, dan tools yang saya gunakan untuk merancang aplikasi web yang kuat dan dapat diskalakan."
         >
-            My Technical <span className=" text-primary">Arsenal</span>
-           
+            My Technical <span className="text-primary">Arsenal</span>
         </SectionHedaer>
 
         <div className="w-full  grid grid-cols-1 md:grid-cols-3 gap-6">

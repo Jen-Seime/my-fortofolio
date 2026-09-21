@@ -492,4 +492,169 @@
             background-position: -200% 0;
         }
     }
+
+    /* ===== Floating Tech Icons Animations ===== */
+    .tech-icon-float {
+        position: absolute;
+        z-index: 20;
+        transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tech-icon-hidden {
+        opacity: 0;
+        transform: scale(0.3) translateY(20px);
+    }
+
+    .tech-icon-visible {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        animation: var(--float-animation, techFloat1) 6s ease-in-out infinite;
+        animation-delay: var(--float-delay, 0s);
+    }
+
+    @keyframes techFloat1 {
+        0%, 100% {
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+        }
+        25% {
+            transform: translateY(-8px) translateX(3px) rotate(2deg);
+        }
+        50% {
+            transform: translateY(-14px) translateX(-2px) rotate(-1deg);
+        }
+        75% {
+            transform: translateY(-6px) translateX(4px) rotate(1deg);
+        }
+    }
+
+    @keyframes techFloat2 {
+        0%, 100% {
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+        }
+        33% {
+            transform: translateY(-12px) translateX(-5px) rotate(-2deg);
+        }
+        66% {
+            transform: translateY(-6px) translateX(5px) rotate(2deg);
+        }
+    }
+
+    @keyframes techFloat3 {
+        0%, 100% {
+            transform: translateX(0px) translateY(0px) rotate(0deg);
+        }
+        20% {
+            transform: translateX(6px) translateY(-4px) rotate(1deg);
+        }
+        40% {
+            transform: translateX(-3px) translateY(-10px) rotate(-1.5deg);
+        }
+        60% {
+            transform: translateX(4px) translateY(-14px) rotate(0.5deg);
+        }
+        80% {
+            transform: translateX(-5px) translateY(-6px) rotate(-0.5deg);
+        }
+    }
+
+    /* Tech icon particle effects */
+    .tech-particle {
+        opacity: 0;
+        animation: particlePulse 3s ease-in-out infinite;
+    }
+
+    @keyframes particlePulse {
+        0%, 100% {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        50% {
+            opacity: 0.6;
+            transform: scale(1.2);
+        }
+    }
+
+    /* Hero image glow pulse */
+    .hero-image-glow {
+        animation: heroGlowPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes heroGlowPulse {
+        0%, 100% {
+            opacity: 0.5;
+            transform: scale(1.08);
+        }
+        50% {
+            opacity: 0.8;
+            transform: scale(1.14);
+        }
+    }
+
+    /* Hero image animated border */
+    .hero-image-border {
+        position: relative;
+    }
+    .hero-image-border::before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(
+            135deg,
+            rgba(0, 64, 224, 0.3),
+            transparent 40%,
+            transparent 60%,
+            rgba(46, 91, 255, 0.2)
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        animation: borderRotate 8s linear infinite;
+    }
+
+    @keyframes borderRotate {
+        0% {
+            background: linear-gradient(0deg, rgba(0,64,224,0.3), transparent 40%, transparent 60%, rgba(46,91,255,0.2));
+        }
+        25% {
+            background: linear-gradient(90deg, rgba(0,64,224,0.3), transparent 40%, transparent 60%, rgba(46,91,255,0.2));
+        }
+        50% {
+            background: linear-gradient(180deg, rgba(0,64,224,0.3), transparent 40%, transparent 60%, rgba(46,91,255,0.2));
+        }
+        75% {
+            background: linear-gradient(270deg, rgba(0,64,224,0.3), transparent 40%, transparent 60%, rgba(46,91,255,0.2));
+        }
+        100% {
+            background: linear-gradient(360deg, rgba(0,64,224,0.3), transparent 40%, transparent 60%, rgba(46,91,255,0.2));
+        }
+    }
+
+    /* Hero name gradient shimmer */
+    .hero-name-gradient {
+        background: linear-gradient(
+            90deg,
+            #0040e0 0%,
+            #2e5bff 30%,
+            #6b8cff 50%,
+            #2e5bff 70%,
+            #0040e0 100%
+        );
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: nameShimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes nameShimmer {
+        0%, 100% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+    }
 }

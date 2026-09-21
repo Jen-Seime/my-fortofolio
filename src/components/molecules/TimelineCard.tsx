@@ -26,7 +26,7 @@ const TimelineCard = ({ experience, index }: TimelineCardProps) => {
         }`}
       >
         <div
-          className={`timeline-card relative max-w-md w-full glass-card rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:shadow-primary/8 hover:-translate-y-1 ${
+          className={`timeline-card relative max-w-md w-full glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 ${
             isLeft ? "text-right" : "text-left"
           }`}
           style={{ "--delay": `${index * 0.15}s` } as React.CSSProperties}
@@ -38,7 +38,7 @@ const TimelineCard = ({ experience, index }: TimelineCardProps) => {
       {/* ── Center timeline spine ── */}
       <div className="hidden md:flex flex-col items-center w-14 shrink-0 order-2">
         {/* Dot */}
-        <div className="relative z-10 w-12 h-12 rounded-xl bg-white border-2 border-primary/30 flex items-center justify-center shadow-lg timeline-dot group-hover:border-primary group-hover:scale-110 transition-all duration-300">
+        <div className="relative z-10 w-12 h-12 rounded-xl bg-white border-2 border-primary/30 flex items-center justify-center shadow-md timeline-dot group-hover:border-primary/70 group-hover:scale-105 transition-all duration-300">
           <span className="material-symbols-outlined text-primary text-[20px]">
             {typeStyle.icon}
           </span>
@@ -75,7 +75,7 @@ const TimelineCard = ({ experience, index }: TimelineCardProps) => {
 
         {/* Mobile card */}
         <div
-          className="timeline-card flex-1 glass-card rounded-2xl p-5 mb-6 transition-all duration-500 hover:shadow-xl hover:shadow-primary/8"
+          className="timeline-card flex-1 glass-card rounded-2xl p-5 mb-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-primary/10"
           style={{ "--delay": `${index * 0.15}s` } as React.CSSProperties}
         >
           <CardContent experience={experience} align="left" typeStyle={typeStyle} />
@@ -168,7 +168,7 @@ const CardContent = ({ experience, align, typeStyle }: CardContentProps) => (
       {experience.techStack.map((tech) => (
         <span
           key={tech}
-          className="inline-flex items-center px-2.5 py-1 rounded-lg bg-surface-container/80 border border-outline-variant/15 text-[11px] font-label-mono text-on-surface-variant/80 transition-colors duration-200 hover:bg-primary/8 hover:text-primary hover:border-primary/20"
+          className="inline-flex items-center px-2.5 py-1 rounded-lg bg-surface-container/80 border border-outline-variant/15 text-[11px] font-label-mono text-on-surface-variant/80 transition-colors duration-200 hover:text-primary hover:border-primary/20"
         >
           {tech}
         </span>

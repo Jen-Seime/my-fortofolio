@@ -13,6 +13,8 @@ const ExperienceEvolution = ({data, isLoading} : ExpProps) => (
     <section className="about-fade-in flex flex-col items-center w-full">
         {/* ── Section Header ── */}
         <SectionHedaer
+            labelBadge=""
+            posisi="tengah"
             icon="timeline"
             deskripsi=" A timeline of my professional journey, highlighting key roles, technical challenges, and major achievements in building scalable web solutions."
         >
